@@ -1,0 +1,90 @@
+version: 2
+updates:
+  # Python package dependencies
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+      timezone: "UTC"
+    open-pull-requests-limit: 10
+    assignees:
+      - "project-maintainer"
+    labels:
+      - "dependencies"
+      - "python"
+    commit-message:
+      prefix: "deps"
+      include: "scope"
+    groups:
+      dev-dependencies:
+        patterns:
+          - "*-dev"
+          - "pytest*"
+          - "black"
+          - "flake8"
+          - "mypy"
+          - "isort"
+        update-types:
+          - "minor"
+          - "patch"
+      production-dependencies:
+        patterns:
+          - "*"
+        exclude-patterns:
+          - "*-dev"
+          - "pytest*"
+          - "black"
+          - "flake8"
+          - "mypy"
+          - "isort"
+        update-types:
+          - "minor"
+          - "patch"
+    ignore:
+      # Ignore major version updates for certain dependencies
+      - dependency-name: "pylint"
+        versions: ["3.x"]
+      - dependency-name: "flask"
+        versions: ["3.x"]
+    
+  # GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "tuesday"
+      time: "09:00"
+      timezone: "UTC"
+    open-pull-requests-limit: 5
+    assignees:
+      - "project-maintainer"
+    labels:
+      - "dependencies"
+      - "github-actions"
+    commit-message:
+      prefix: "ci"
+      include: "scope"
+    
+  # NPM packages (for web analysis tools)
+  - package-ecosystem: "npm"
+    directory: "/coderefactor/web/static"
+    schedule:
+      interval: "monthly"
+    open-pull-requests-limit: 5
+    assignees:
+      - "project-maintainer"
+    labels:
+      - "dependencies"
+      - "javascript"
+    commit-message:
+      prefix: "deps"
+      include: "scope"
+    groups:
+      web-dependencies:
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"

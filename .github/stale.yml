@@ -1,0 +1,58 @@
+name: Mark stale issues and pull requests
+
+on:
+  schedule:
+    - cron: '30 1 * * *'  # Run at 01:30 UTC every day
+
+permissions:
+  issues: write
+  pull-requests: write
+
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/stale@v8
+        with:
+          # General settings
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          days-before-stale: 60
+          days-before-close: 14
+          operations-per-run: 100
+          remove-stale-when-updated: true
+          
+          # Issue specific settings
+          stale-issue-message: >
+            This issue has been automatically marked as stale because it has not had
+            recent activity. It will be closed in 14 days if no further activity occurs.
+            Thank you for your contributions.
+          close-issue-message: >
+            This issue has been automatically closed because it has not had recent activity.
+            Please feel free to reopen it if you still believe this is relevant.
+          stale-issue-label: 'stale'
+          exempt-issue-labels: 'bug,enhancement,documentation,security,pinned,roadmap'
+          
+          # PR specific settings
+          stale-pr-message: >
+            This pull request has been automatically marked as stale because it has not had
+            recent activity. It will be closed in 14 days if no further activity occurs.
+            Thank you for your contributions.
+          close-pr-message: >
+            This pull request has been automatically closed because it has not had recent activity.
+            Please feel free to reopen it if you still want to contribute this change.
+          stale-pr-label: 'stale'
+          exempt-pr-labels: 'work-in-progress,security,pinned,dependencies'
+          exempt-draft-pr: true
+          
+          # Comments and reactions
+          exempt-issue-assignees: true
+          exempt-pr-assignees: true
+          exempt-all-issue-milestones: true
+          exempt-all-pr-milestones: true
+          
+          # Only mark as stale issues with these labels
+          only-labels: ''  # Leave empty to check all issues
+          
+          # Additional settings
+          ascending: true  # Process oldest first
+          delete-branch: false  # Don't delete branches

@@ -1,0 +1,67 @@
+# Test dependencies for CodeRefactor
+-r base.txt
+
+# Test frameworks
+pytest>=7.2.0
+pytest-cov>=4.0.0
+pytest-xdist>=3.1.0
+pytest-asyncio>=0.20.0
+pytest-mock>=3.10.0
+pytest-timeout>=2.1.0
+pytest-rerunfailures>=11.1.0
+pytest-snapshot>=0.9.0
+
+# Coverage tools
+coverage>=7.0.0
+codecov>=2.1.12
+
+# Mocking and testing utilities
+responses>=0.22.0
+requests-mock>=1.10.0
+httpx-mock>=0.25.0
+freezegun>=1.2.0
+faker>=16.6.0
+hypothesis>=6.68.0
+
+# Assertion libraries
+assertpy>=1.1
+pyhamcrest>=2.0.4
+
+# Performance testing
+locust>=2.15.0
+
+# API testing
+tavern>=1.24.0
+schemathesis>=3.19.0
+
+# Web testing
+selenium>=4.8.0
+playwright>=1.30.0
+pytest-selenium>=4.0.0
+pytest-playwright>=0.3.0
+
+# Mock server
+mock-server>=2.0.0
+
+# Test fixtures
+pytest-fixture-config>=1.7.0
+pytest-datadir>=1.4.1
+
+# Static files and artifacts
+pytest-datafiles>=3.0.0
+
+# Test database
+pytest-mongodb>=2.2.0
+
+# Test reporting
+pytest-html>=3.2.0
+allure-pytest>=2.12.0
+pytest-json-report>=1.5.0
+
+# Test management
+pytest-ordering>=0.6.0
+pytest-randomly>=3.12.0
+
+# Debugging
+pytest-sugar>=0.9.6
+pytest-clarity>=1.0.1

@@ -1,0 +1,46 @@
+# Documentation dependencies for CodeRefactor
+-r base.txt
+
+# Documentation generators
+mkdocs>=1.4.2
+mkdocs-material>=9.0.0
+mkdocstrings>=0.20.0
+mkdocstrings-python>=0.8.0
+mkdocs-gen-files>=0.4.0
+mkdocs-literate-nav>=0.6.0
+mkdocs-section-index>=0.3.5
+
+# API documentation
+pdoc3>=0.10.0
+sphinx>=6.1.0
+sphinx-rtd-theme>=1.2.0
+sphinx-autodoc-typehints>=1.22.0
+sphinx-copybutton>=0.5.0
+sphinx-markdown-tables>=0.0.17
+
+# Markdown extensions
+pymdown-extensions>=9.9.0
+markdown-include>=0.8.0
+mkdocs-autorefs>=0.4.1
+mkdocs-jupyter>=0.24.0
+
+# Diagram generation
+plantuml-markdown>=3.9.0
+mermaid-cli>=0.5.1
+
+# Code highlighting
+pygments>=2.14.0
+
+# Documentation testing
+doc8>=1.1.1
+
+# Examples and notebooks
+jupyter>=1.0.0
+nbconvert>=7.2.9
+nbformat>=5.7.3
+
+# Screenshots and image handling
+Pillow>=9.4.0
+
+# Live documentation server
+livereload>=2.6.3
