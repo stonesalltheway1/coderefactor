@@ -5,7 +5,7 @@
 [![PyPI version](https://img.shields.io/pypi/v/coderefactor.svg)](https://pypi.org/project/coderefactor/)
 [![Python Versions](https://img.shields.io/pypi/pyversions/coderefactor.svg)](https://pypi.org/project/coderefactor/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![CI Status](https://github.com/Stonesalltheway1/coderefactor/workflows/tests/badge.svg)](https://github.com/username/coderefactor/actions)
+[![CI Status](https://github.com/Stonesalltheway1/coderefactor/workflows/tests/badge.svg)](https://github.com/Stonesalltheway1/coderefactor/actions)
 [![Documentation Status](https://readthedocs.org/projects/coderefactor/badge/?version=latest)](https://coderefactor.readthedocs.io/en/latest/?badge=latest)
 
 ## Overview
@@ -48,7 +48,7 @@ pip install coderefactor[all]
 ### Development Installation
 
 ```bash
-git clone https://github.com/username/coderefactor.git
+git clone https://github.com/Stonesalltheway1/coderefactor.git
 cd coderefactor
 pip install -e .[dev]
 ```
