@@ -1,0 +1,49 @@
+<html>
+<!-- Missing DOCTYPE declaration -->
+<head>
+    <title>CodeRefactor Test Page</title>
+    <meta charset=utf-8> <!-- Missing quotes around attribute -->
+    <link rel=stylesheet href="styles.css"> <!-- Missing quotes around attribute -->
+    <script src="script.js"></script>
+</head>
+<body>
+    <H1>CodeRefactor HTML Test</H1> <!-- Inconsistent case for tags -->
+    <img src=test-image.jpg> <!-- Missing alt attribute and quotes -->
+    
+    <DIV class="container"> <!-- Inconsistent case for tags -->
+        <p>This is a test paragraph with an <a href="#" onclick=alert('Test')>unquoted attribute</a>
+        <!-- Unclosed paragraph tag -->
+        
+        <p>This is a second paragraph</p>
+        
+        <Table border=1> <!-- Inconsistent case with unquoted attribute -->
+            <tr>
+                <td>Cell 1</td>
+                <td>Cell 2</td>
+            <tr> <!-- Missing closing tag -->
+                <td>Cell 3</td>
+                <td>Cell 4
+            </tr> <!-- Unclosed td tag -->
+        </Table>
+        
+        <div style="color: #12ZZ34"> <!-- Invalid color value -->
+            <span>Test span with invalid color</span>
+        </div>
+    </DIV>
+    
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2
+            <ul>
+                <li>Subitem 1</li>
+            <!-- Missing closing ul and li tags -->
+        <li>Item 3</li>
+    </ul>
+    
+    <script>
+        // Inline script with issues
+        var unusedVar = 10;
+        document.getElementById('nonexistent').innerHTML = 'Test';
+    </script>
+</body>
+</html>

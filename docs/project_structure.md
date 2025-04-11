@@ -1,6 +1,5 @@
 # CodeRefactor Project Structure
 
-```
 coderefactor/
 │
 ├── coderefactor/                       # Main package
@@ -36,6 +35,10 @@ coderefactor/
 │   │   │   ├── js/                     # JavaScript files
 │   │   │   └── img/                    # Images
 │   │   └── templates/                  # HTML templates
+│   │       ├── index.html              # Main page template
+│   │       ├── analyze.html            # Analysis page template
+│   │       ├── fix.html                # Fix page template
+│   │       └── report.html             # Report template
 │   │
 │   ├── cli/                            # Command-line interface
 │   │   ├── __init__.py
@@ -48,15 +51,35 @@ coderefactor/
 │       └── output.py                   # Output formatters
 │
 ├── tests/                              # Tests
-│   ├── __init__.py
-│   ├── test_python_analyzer.py
-│   ├── test_csharp_analyzer.py
-│   ├── test_web_analyzer.py
-│   ├── test_llm.py
+│   ├── __init__.py                     # Package initialization
+│   ├── conftest.py                     # Shared pytest fixtures
+│   ├── test_base.py                    # Tests for base classes
+│   ├── test_python_analyzer.py         # Tests for Python analyzer
+│   ├── test_csharp_analyzer.py         # Tests for C# analyzer
+│   ├── test_web_analyzer.py            # Tests for HTML/CSS/JS analyzer
+│   ├── test_python_fixer.py            # Tests for Python fixer
+│   ├── test_csharp_fixer.py            # Tests for C# fixer
+│   ├── test_web_fixer.py               # Tests for HTML/CSS/JS fixer
+│   ├── test_llm.py                     # Tests for LLM integration
+│   ├── test_cli.py                     # Tests for command-line interface
+│   ├── test_web_interface.py           # Tests for web interface
+│   ├── test_utils.py                   # Tests for utility modules
+│   ├── test_integration.py             # Integration tests
+│   ├── README.md                       # Test suite documentation
+│   │
 │   └── fixtures/                       # Test fixtures
 │       ├── python/                     # Python test files
+│       │   ├── simple.py               # Simple Python test file
+│       │   └── complex.py              # Complex Python test file
+│       │
 │       ├── csharp/                     # C# test files
+│       │   ├── simple.cs               # Simple C# test file
+│       │   └── complex.cs              # Complex C# test file
+│       │
 │       └── web/                        # HTML/CSS/JS test files
+│           ├── simple.html             # Simple HTML test file
+│           ├── simple.css              # Simple CSS test file
+│           └── simple.js               # Simple JS test file
 │
 ├── docs/                               # Documentation
 │   ├── index.md                        # Main documentation page
@@ -64,13 +87,26 @@ coderefactor/
 │   ├── usage.md                        # Usage guide
 │   ├── configuration.md                # Configuration guide
 │   ├── api/                            # API documentation
+│   │   ├── analyzers.md                # Analyzers API documentation
+│   │   ├── fixers.md                   # Fixers API documentation
+│   │   ├── llm.md                      # LLM integration documentation
+│   │   ├── cli.md                      # CLI documentation
+│   │   └── web.md                      # Web interface documentation
+│   │
 │   └── examples/                       # Example use cases
+│       ├── python_examples.md          # Python examples
+│       ├── csharp_examples.md          # C# examples
+│       └── web_examples.md             # Web examples
 │
 ├── examples/                           # Example scripts and configurations
-│   ├── analyze_python_project.py
-│   ├── analyze_csharp_project.py
-│   ├── custom_config.yaml
-│   └── web_integration.py
+│   ├── analyze_python_project.py       # Python project analysis example
+│   ├── analyze_csharp_project.py       # C# project analysis example
+│   ├── analyze_web_project.py          # Web project analysis example
+│   ├── fix_python_issues.py            # Python fixing example
+│   ├── fix_csharp_issues.py            # C# fixing example
+│   ├── fix_web_issues.py               # Web fixing example
+│   ├── custom_config.yaml              # Example configuration
+│   └── web_integration.py              # Web integration example
 │
 ├── requirements/                       # Requirements files
 │   ├── base.txt                        # Base requirements
@@ -79,8 +115,13 @@ coderefactor/
 │   └── test.txt                        # Test requirements
 │
 ├── .github/                            # GitHub configuration
+│   ├── ISSUE_TEMPLATE/                 # Issue templates
+│   │   ├── bug_report.md               # Bug report template
+│   │   └── feature_request.md          # Feature request template
+│   │
 │   └── workflows/                      # GitHub Actions
 │       ├── tests.yml                   # Run tests
+│       ├── lint.yml                    # Lint code
 │       └── release.yml                 # Release workflow
 │
 ├── setup.py                            # Package setup script
@@ -89,8 +130,8 @@ coderefactor/
 ├── MANIFEST.in                         # Package manifest
 ├── README.md                           # Project readme
 ├── LICENSE                             # Project license
-└── CHANGELOG.md                        # Project changelog
-```
+├── CHANGELOG.md                        # Project changelog
+└── .gitignore                          # Git ignore file
 
 ## Key Components and Features
 
